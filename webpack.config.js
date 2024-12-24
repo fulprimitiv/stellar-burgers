@@ -89,6 +89,11 @@ module.exports = {
     static: path.join(__dirname, './dist'),
     compress: true,
     historyApiFallback: true,
-    port: 4000
+    port: 4000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/javascript'
+    },
+    open: true
   }
 };

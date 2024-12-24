@@ -17,10 +17,10 @@ export type TConstructorIngredient = TIngredient & {
 };
 
 export type TConstructorItems = {
-	bun: TIngredient | null;
-	ingredients: TIngredient[];
- };
- 
+  bun: TIngredient | null;
+  ingredients: TIngredient[];
+};
+
 export type TOrder = {
   _id: string;
   status: string;
