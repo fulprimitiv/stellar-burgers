@@ -2,14 +2,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getFeedsApi } from '@api';
 import { TOrder } from '@utils-types';
 
-interface IngredientsState {
+export interface FeedState {
   loading: boolean;
   orders: TOrder[];
   total: number;
   totalToday: number;
 }
 
-const initialState: IngredientsState = {
+const initialState: FeedState = {
   loading: false,
   orders: [],
   total: 0,

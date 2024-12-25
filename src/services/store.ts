@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import ingredientsReducer from './slices/ingredients';
 import modalReducer from './slices/modal';
 import feedReducer from './slices/feed';
@@ -11,15 +11,15 @@ import {
   useSelector as selectorHook
 } from 'react-redux';
 
-const rootReducer = {
+export const rootReducer = combineReducers({
   ingredients: ingredientsReducer,
   modals: modalReducer,
   feed: feedReducer,
   auth: authReducer,
   orders: ordersReducer
-};
+});
 
-const store = configureStore({
+export const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production'
 });

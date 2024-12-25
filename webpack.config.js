@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.tsx'),
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -82,18 +82,15 @@ module.exports = {
     }
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
-    static: path.join(__dirname, './dist'),
-    compress: true,
-    historyApiFallback: true,
+    static: './dist',
+    hot: true,
     port: 4000,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/javascript'
-    },
+    historyApiFallback: true,
     open: true
   }
 };
